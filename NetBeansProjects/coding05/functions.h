@@ -5,14 +5,10 @@ Purpose:
 Notes: 
 ***********************************************************/
 
-#ifndef CLASSES_MAIN_H
-#define CLASSES_MAIN_H
+#ifndef FUNCTIONS_H
+#define FUNCTIONS_H
 
-#include <iostream>
-//#include "dog.h"
-#include "functions.h"
 
-using std::cout;
-using std::endl;
 
-#endif //CLASSES_MAIN_H
+#endif /* FUNCTIONS_H */
+
