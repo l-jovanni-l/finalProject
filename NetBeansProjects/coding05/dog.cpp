@@ -5,17 +5,26 @@ Purpose:
 Notes: 
 ***********************************************************/
 
-#ifndef FUNCTIONS_H
-#define FUNCTIONS_H
-#include <string>
-#include "pet.h"
 #include "dog.h"
-#include <iostream>
-using namespace std;
+
+Dog::Dog(string name, int age, bool akc): Pet(name, age) {
+    setAkc(akc);
+}    
+
+Dog::~Dog(){
+}
+
+bool Dog::getAkc(){
+    return akc;
+}
+
+void Dog::setAkc(bool a){
+    akc = a;
+}
 
 
-void displayDog(Dog*);
 
 
-#endif /* FUNCTIONS_H */
+
+
 
