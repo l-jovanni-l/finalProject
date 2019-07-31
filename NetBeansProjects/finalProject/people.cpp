@@ -104,3 +104,33 @@ void People::displayPeople(sortType sort){
     }
         }
 }
+
+void People::bubbleSort(Person** arr, sortType sort)
+{ 
+    int i,j;
+    for (i=0; i < sort-1; i++){
+        for (j=0; j<sort - i - 1; j++){
+            if (sort == ID){
+                if (arr[j]->getid() > arr[j+1]->getid()){
+                    swap(&arr[j], &arr[j+1]);
+                }
+            }
+            else 
+            {
+                if (sort == AGE){
+                    if (arr[j]->getAge() > arr[j+1]->getAge()){
+                        swap(&arr[j], &arr[j+1]);
+                    }
+                }
+            }
+        }
+    }
+}
+
+void People::swap(Person** a, Person** b)
+{
+    Person *temp = *b;
+    *b = *a;
+    *a = temp;
+    return;
+}
