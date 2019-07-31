@@ -24,7 +24,12 @@ int Person::getAge(){
 }
 
 string Person::getName(){
-    return name;
+    string fname,lname;
+    int firstSpace = name.find_first_of(" ");
+    fname = name.substr(0,firstSpace);
+    lname = name.substr(firstSpace);
+    
+    return lname + ", " + fname;
 }
 
 string Person::getFavoriteFood(){

@@ -8,13 +8,7 @@ Notes:
 #include "people.h"
 
 People::People(string fileName){
-//    numPeople = size;
-//    
-//    //dynamically allocating pointers to an array of name person
-//    person = new Person*[size]; //person is now a an array of pointers of size size.
-//    for (int i=0;i<size;i++){
-//    person[i] = new Person(nombre[i],edad[i], comida[i]);
-//    }    
+ 
     ifstream inFile;
     string name, food;
     int id, age;
@@ -27,7 +21,6 @@ People::People(string fileName){
     {
         while(getline(inFile, name))    //this gets the number of lines in the file passed. 
             size++;
-        cout << "Number of lines: " <<  size << endl;
         inFile.clear();
         inFile.seekg(0, ios::beg);      //goes back to the beginning of the file
         /* If the file is empty throw the error*/
@@ -47,8 +40,8 @@ People::People(string fileName){
             inFile.ignore();
             getline(inFile, food);
             /* Check to see variables were stored correctly */
-            cout << "name: " << name << endl << "id: " << id << endl;
-            cout << "age: " << age << endl << "food: " << food << endl;
+            //cout << id << ": " << name << " is " << age << " years old and likes " << food << "." << endl;
+
             
             person[i] = new Person(name,id, age, food);
             i++;
@@ -99,17 +92,17 @@ void People::displayPeople(sortType sort){
     if (numPeople == 0){
         cout << "There are no people to display" << endl;
     } else {
-    for (int i=0;i<numPeople;i++){
+        for (int i=0;i<numPeople;i++){
             cout << temp[i]->getid() << ": " << temp[i]->getName() << " is " << temp[i]->getAge() <<" years old and likes " << temp[i]->getFavoriteFood() << "."  << endl;
-    }
         }
+    }
 }
 
 void People::bubbleSort(Person** arr, sortType sort)
 { 
     int i,j;
-    for (i=0; i < sort-1; i++){
-        for (j=0; j<sort - i - 1; j++){
+    for (i=0; i < numPeople-1; i++){
+        for (j=0; j<numPeople - i - 1; j++){
             if (sort == ID){
                 if (arr[j]->getid() > arr[j+1]->getid()){
                     swap(&arr[j], &arr[j+1]);
@@ -132,5 +125,4 @@ void People::swap(Person** a, Person** b)
     Person *temp = *b;
     *b = *a;
     *a = temp;
-    return;
 }
