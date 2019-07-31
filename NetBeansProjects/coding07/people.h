@@ -27,7 +27,7 @@ public:
 private: 
     int numPeople;
     
-    Person **persons;
+    Person **person;
     
 };
     

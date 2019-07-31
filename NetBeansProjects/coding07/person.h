@@ -11,7 +11,7 @@ Notes:
 #include <string>
 #include <iostream>
 #include <cstring>
-
+#include <cctype>
 using namespace std;
 
 
@@ -46,12 +46,5 @@ private:
     
     
 };
-
-
-
-
-
-
-
 #endif /* PERSON_H */
 

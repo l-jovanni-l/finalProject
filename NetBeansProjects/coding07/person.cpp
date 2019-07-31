@@ -12,6 +12,7 @@ Person::Person(string n, int a, string ff){
     setName(n);
     setAge(a);
     setFavoriteFood(ff);
+    id = makeid(n);
 }
 
 Person::~Person(){
@@ -31,8 +32,8 @@ string Person::getFavoriteFood(){
 }
 /*****setters*******/
 
-void Person:: setAge(int a){
-    if (a > 100 || a < 0){
+void Person::setAge(int a){
+    if (a < 0 || a > 100){
         age = 0;
     } else {
         age = a;
@@ -55,15 +56,12 @@ int Person::getid(){
     return id;
 }
 
-int makeid(string name){
-    int id;
+int Person::makeid(string name){
+    int id =0;
     int size = name.length();
     for (int i=0;i<size;i++){
-        if (islower(name[i])){
-            id+=name[i];
-        }
-        
-    }cout << id << endl;
+        id+=tolower(name[i]);
+    }
     return id;
 }
 
