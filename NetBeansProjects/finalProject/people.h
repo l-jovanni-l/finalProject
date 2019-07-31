@@ -31,6 +31,8 @@ private:
     int numPeople;
     
     Person **person;
+    void bubbleSort(Person**, sortType);
+    void swap(Person**, Person**);
     
 };
     

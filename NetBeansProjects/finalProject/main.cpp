@@ -16,7 +16,7 @@ int main(int argc, char **argv) {
         cout << "Incorrect number of parameters. You must supply a file name." << endl;
     } else {
 
-        cout << "Loading people... ";
+        cout << "Loading people... " <<  endl;
         try {
             people = new People(argv[1]);
         } catch (const char* error) {
